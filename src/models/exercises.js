@@ -3,10 +3,10 @@ import mongoose from "mongoose";
 const exercicesSchema = new mongoose.Schema(
 	{
 		id: { type: mongoose.Schema.Types.ObjectId },
-		exercice_type: { type: String, required: true },
-		duration: { type: Number },
-		kilometers: { type: Number },
-		exercice_date: { type: Date },
+		exercise_type: { type: String, required: true },
+		Duration: { type: Number },
+		Kilometers: { type: Number },
+		exercise_date: { type: Date },
 		user_id: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: "User",
@@ -16,6 +16,6 @@ const exercicesSchema = new mongoose.Schema(
 	{ versionKey: false }
 );
 
-const Exercise = mongoose.model("Exercises", exercicesSchema);
+const Exercise = mongoose.model("atividades", exercicesSchema);
 
 export default Exercise;

@@ -15,8 +15,8 @@ class ExerciceController {
 	static async find(req, res) {
 		try {
 			const id = req.params.id;
-			const Exercise = await Exercise.findById(id);
-			res.status(200).json(Exercise);
+			const exercise = await Exercise.findById(id);
+			res.status(200).json(exercise);
 		} catch (erro) {
 			res
 				.status(500)
@@ -26,10 +26,8 @@ class ExerciceController {
 
 	static async create(req, res) {
 		try {
-			const Exercise = await Exercise.create(req.body);
-			res
-				.status(201)
-				.json({ message: "usuario criado com sucesso", Exercise: Exercise });
+			const exercise = await Exercise.create(req.body);
+			res.status(201).json({ message: "usuario criado com sucesso", exercise });
 		} catch (erro) {
 			res
 				.status(500)
