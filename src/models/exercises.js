@@ -12,6 +12,7 @@ const exercicesSchema = new mongoose.Schema(
 			ref: "User",
 			required: true,
 		},
+		pontuation: { type: Number },
 	},
 	{ versionKey: false }
 );

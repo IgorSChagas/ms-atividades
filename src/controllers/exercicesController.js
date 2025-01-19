@@ -4,7 +4,7 @@ class ExerciceController {
 	static async list(req, res) {
 		try {
 			const exercises = await Exercise.find({});
-			res.status(200).json(exercises);
+			res.send(exercises);
 		} catch (erro) {
 			res
 				.status(500)

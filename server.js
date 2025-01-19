@@ -4,15 +4,17 @@ import swaggerJsDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 import connectDB from "./src/config/dbConnect.js";
 import routes from "./src/routes/index.js";
+import cors from "cors";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Conexão com o banco
 connectDB();
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 
 // Configuração Swagger
 const swaggerOptions = {
