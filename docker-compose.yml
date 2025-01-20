@@ -1,0 +1,27 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node_app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MONGO_URI=mongodb+srv://admin:adminadmin123@cluster0.uegy1.mongodb.net/atividade?retryWrites=true&w=majority&appName=Cluster0
+    depends_on:
+      - mongo
+    volumes:
+      - .:/app
+    command: npm start
+
+  mongo:
+    image: mongo:6
+    container_name: mongo_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
